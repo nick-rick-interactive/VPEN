@@ -2,6 +2,7 @@
     .white.elevation-2
         v-toolbar.cyan(flat dense dark)
             v-toolbar-title {{title}}
+            slot(name='action')
         div.pl-4.pr-4.pt-2.pb-2
             slot(name='main') No Slot Content Defined.
 </template>
