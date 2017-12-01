@@ -15,7 +15,7 @@ require('./routes')(app);
 
 sequelize.sync()
   .then(() => {
+    process.on('uncaughtException', ()=>{})
     app.listen(config.port);
-    console.log(`Sever started on port ${config.PORT}`)
   })
 

@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
+require('dotenv').config('/')
 module.exports = {
-  port: 8081,
+  port: 8082,
   db: {
     database: process.env.DB_NAME || "hfpngwyp",
     user: process.env.DB_USER || "hfpngwyp",
@@ -12,5 +13,8 @@ module.exports = {
       storage: './testdb.pg',
       operatorsAliases: Op
     }
+  },
+  authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secret'
   }
 }
